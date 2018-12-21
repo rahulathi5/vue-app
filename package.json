@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "vue-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "firebase": "^5.7.1",
     "jwt-decode": "^2.2.0",
     "toastr": "^2.1.4",
     "vee-validate": "^2.1.4",
     "vue": "^2.5.17",
     "vue-data-tables": "^3.4.4",
+    "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.2",
     "vuex": "^3.0.1"
   },

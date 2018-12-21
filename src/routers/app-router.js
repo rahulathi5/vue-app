@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import toastr from 'toastr'
 
 import Dashboard from '@/components/dashboard'
 import GistsList from '@/components/GistsList'
@@ -8,6 +9,10 @@ import GistDetails from '@/components/GistDetails'
 import DataTable from '@/components/DataTable'
 import FormValidation from '@/components/FormValidation'
 import DataStore from '@/components/DataStore'
+import EasyQueue from '@/components/EasyQueue'
+import EasyQueueLogin from '@/components/EasyQueueLogin'
+
+// import store from '../store/app-store'
 
 Vue.use(Router)
 
@@ -56,6 +61,26 @@ export default new Router({
         path:'/store',
         name:'store',
         component:DataStore
+      },{
+        path:'/easy-queue-dashboard',
+        name:'easyQueueDashboard',
+        component: EasyQueue,
+        beforeEnter: (to, from, next) => {
+          // console.log(to, from, store.state.refreshToken);
+          if(localStorage.refreshToken){
+            // console.log('here');
+            next();
+          }else{
+            next('/easy-queue-login');
+            // event.preventDefault();
+            toastr.warning('Please login to access the dashboard.');
+          }
+        }
+      },
+      {
+        path:'/easy-queue-login',
+        name:'easyQueueLogin',
+        component: EasyQueueLogin
       }
     ]
   })

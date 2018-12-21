@@ -1,13 +1,21 @@
 <template>
   <div>Form Validation
     <br>
+    <router-link to="/dashboard">Back to Dashboard</router-link>
     <!-- <form @submit="submitData" novalidate>
       <input type="text" v-model="user.email" placeholder="Enter email">
       <div>{{error.email}}</div>
     </form>-->
     <form @submit="submitData" novalidate>
-      <input v-model="user.email" v-validate="'required|email'" data-vv-as="Email" name="emailId" 
-      type="text" v-bind:class="{'invaid-input' : errors.has('emailId')}" autocomplete="off"> &nbsp;
+      <input
+        v-model="user.email"
+        v-validate="'required|email'"
+        data-vv-as="Email"
+        name="emailId"
+        type="text"
+        v-bind:class="{'invaid-input' : errors.has('emailId')}"
+        autocomplete="off"
+      > &nbsp;
       <button v-on:click="submitData">Submit</button>
       <div class="red-text">{{ errors.first('emailId') }}</div>
     </form>
@@ -28,11 +36,14 @@ const dictionary = {
   // },
   custom: {
     emailId: {
-      required: () => "Your email is empty",
+      required: () => "Please enter your email",
       email: () => "Please enter a valid email"
     },
     name: {
       required: () => "Your name is empty"
+    },
+    password:{
+      required: () => 'Please enter your password'
     }
   }
 };
@@ -49,7 +60,7 @@ export default {
   data: function() {
     return {
       user: {
-        email:'',
+        email: ""
       }
       // error: {
       //   email: ""
@@ -77,11 +88,10 @@ export default {
 </script>
 
 <style>
-.red-text{
+.red-text {
   color: red;
 }
-.invaid-input{
+.invaid-input {
   border: 1px solid red;
 }
-
 </style>

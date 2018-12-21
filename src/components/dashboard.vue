@@ -16,6 +16,9 @@
       <div class="each-page">
         <router-link to='/store'>Data Store Vuex</router-link>
       </div>
+      <div class="each-page">
+        <router-link to='/easy-queue-login'>Easy Queue</router-link>
+      </div>
   </div>
 </template>
 

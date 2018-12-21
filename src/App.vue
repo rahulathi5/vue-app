@@ -12,8 +12,9 @@
       <a v-bind:class="{'seledted-filter' : filterType==='active'}" v-on:click="filterType='active'">Active</a> &nbsp;
       <a v-bind:class="{'seledted-filter' : filterType==='completed'}" v-on:click="filterType='completed'">Completed</a>
     </div> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 <router-view/>
+<vue-progress-bar></vue-progress-bar>
  <!-- https://api.github.com/gists/public -->
   </div>
 </template>
@@ -40,6 +41,7 @@ export default {
   },
   mounted: function() {
     toastr.info('hello');
+        // this.$root.msg = 'hello';
     // var decoded = jwt_decode('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMDhmODM2Y2QyMTRjNzhlZmExOTUzZiIsIl9pZCI6IjVjMDhmODM2Y2QyMTRjNzhlZmExOTUzZiIsIndlZGRpbmdJZCI6IjVjMDhmODM2Y2QyMTRjNzhlZmExOTUzZSIsIl93ZWRkaW5nIjoiNWMwOGY4MzZjZDIxNGM3OGVmYTE5NTNlIiwicGhvbmUiOiIrOTE5NzQ4MTkxMzM4IiwiaXNIb3N0Ijp0cnVlLCJpc0NvaG9zdCI6ZmFsc2UsImlzR3Vlc3QiOmZhbHNlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTQ1MDUwNjUyLCJleHAiOjE1NDc2NDI2NTJ9.3EJ6iXZKOleP6LplvDEtW5tQwbKRfg1uTU88R6Hf9Yc');
     // console.log(decoded);
   }
@@ -72,5 +74,8 @@ export default {
   border-radius: 10px;
   width: 90px;
   display: inline-block;
+}
+.__cov-progress{
+  height: 4px !important;
 }
 </style>

@@ -23,9 +23,12 @@ export default {
       }
       this.taskList.push(this.newTask);
       this.newTask={ name:'', id: Date.now(), isCompleted:false, editable:false};
-      console.log('taskList: ', this.taskList);
+      // console.log('taskList: ', this.taskList);
       this.$emit('new-task-added', this.taskList);
     }
+  },
+  mounted: function(){
+    // console.log(this.$parent);
   }
 }
 </script>

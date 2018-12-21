@@ -1,5 +1,7 @@
 <template>
   <div>
+    <router-link to='/dashboard'>Back to Dashboard</router-link>
+    <br />
     Data Store {{count}}
     <button v-on:click="increment">+</button> &nbsp;
     <button v-on:click="decrement">-</button>
